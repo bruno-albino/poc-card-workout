@@ -1,30 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Card SelectionVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="CardSelectionVC" customModule="CardWorkout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10C" translatesAutoresizingMaskIntoConstraints="NO" id="vCH-k5-vby">
+                                <rect key="frame" x="71.666666666666686" y="176" width="250" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="6hg-T7-Mk4"/>
+                                    <constraint firstAttribute="height" constant="350" id="Esf-ow-Jhm"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gga-a9-6xJ">
+                                <rect key="frame" x="71.666666666666686" y="576" width="250" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="afD-LS-M2l"/>
+                                    <constraint firstAttribute="width" constant="250" id="u8I-S4-oXc"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="ctaButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OJm-Io-OUX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrJ-rX-k5y">
+                                <rect key="frame" x="71.666666666666686" y="646" width="250" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="iux-D6-1X7"/>
+                                    <constraint firstAttribute="height" constant="50" id="xQZ-cg-Eqk"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Rules">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="rulesButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2Gh-0v-ZSc"/>
+                                    <segue destination="vmO-0J-RHc" kind="presentation" id="wam-eJ-eLr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nrJ-rX-k5y" firstAttribute="trailing" secondItem="Gga-a9-6xJ" secondAttribute="trailing" id="28q-R9-VCf"/>
+                            <constraint firstItem="vCH-k5-vby" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-75" id="83t-h1-38c"/>
+                            <constraint firstItem="Gga-a9-6xJ" firstAttribute="top" secondItem="vCH-k5-vby" secondAttribute="bottom" constant="50" id="EZO-yU-e1M"/>
+                            <constraint firstItem="Gga-a9-6xJ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Q1O-lW-qkT"/>
+                            <constraint firstItem="nrJ-rX-k5y" firstAttribute="top" secondItem="Gga-a9-6xJ" secondAttribute="bottom" constant="20" id="YCY-aJ-sf7"/>
+                            <constraint firstItem="vCH-k5-vby" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dUy-hG-YfR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="vCH-k5-vby" id="Isa-wU-JqF"/>
+                        <outlet property="ctaButton" destination="Gga-a9-6xJ" id="uBt-gz-EM9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="114" y="-27"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="38x-xh-9Dt">
+            <objects>
+                <viewController id="vmO-0J-RHc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qwx-eM-JE0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh6-O0-iAe">
+                                <rect key="frame" x="30" y="150" width="333" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ee-PQ-yrZ">
+                                <rect key="frame" x="30" y="218" width="333" height="86"/>
+                                <string key="text">The value of each card represents the number of exercise you do. 
+J = 11, Q = 12, K = 13, A = 14</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♠️ = Push-up  ❤️ = Sit-up  ♣️ = Burpees  ♦️ = Jumping Jacks" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zk5-9T-QRw">
+                                <rect key="frame" x="96.666666666666686" y="379" width="200" height="175.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="abV-4E-7Kx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h2g-nt-IMx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zk5-9T-QRw" firstAttribute="centerX" secondItem="qwx-eM-JE0" secondAttribute="centerX" id="5Iq-a9-Z8O"/>
+                            <constraint firstItem="h2g-nt-IMx" firstAttribute="trailing" secondItem="Rh6-O0-iAe" secondAttribute="trailing" constant="30" id="Dwi-os-hXE"/>
+                            <constraint firstItem="7Ee-PQ-yrZ" firstAttribute="leading" secondItem="h2g-nt-IMx" secondAttribute="leading" constant="30" id="E3L-HB-UbI"/>
+                            <constraint firstItem="7Ee-PQ-yrZ" firstAttribute="top" secondItem="Rh6-O0-iAe" secondAttribute="bottom" constant="20" id="W7V-1x-jbv"/>
+                            <constraint firstItem="Rh6-O0-iAe" firstAttribute="top" secondItem="h2g-nt-IMx" secondAttribute="top" constant="150" id="ceC-gF-Xnc"/>
+                            <constraint firstItem="Rh6-O0-iAe" firstAttribute="leading" secondItem="h2g-nt-IMx" secondAttribute="leading" constant="30" id="gGf-yp-XfM"/>
+                            <constraint firstItem="Zk5-9T-QRw" firstAttribute="top" secondItem="7Ee-PQ-yrZ" secondAttribute="bottom" constant="75" id="lbG-ZA-Grn"/>
+                            <constraint firstItem="h2g-nt-IMx" firstAttribute="trailing" secondItem="7Ee-PQ-yrZ" secondAttribute="trailing" constant="30" id="yOW-lV-WYD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUH-aw-gyl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="-27"/>
         </scene>
     </scenes>
     <resources>
+        <image name="10C" width="691" height="1056"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
